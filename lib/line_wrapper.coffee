@@ -119,6 +119,7 @@ class LineWrapper extends EventEmitter
       y = @document.y
       @emit 'line', buffer, options, this
       lc++
+      @continuedX = 0 if buffer[-1..] is '\n'
       
     @emit 'sectionStart', options, this
     
